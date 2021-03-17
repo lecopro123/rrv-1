@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import "./index.css";
 import Main from "./main";
 //import { BrowserRouter } from 'react-router-dom';
-import { ConfigStore } from "./redux/ConfigureStore";
+import { ConfigStore } from "./Redux/ConfigureStore";
 
 const store = ConfigStore();
 

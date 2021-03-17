@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import App from "./app/App";
-import { fetchNews } from "./redux/ActionCreators";
+import { fetchNews } from "./Redux/ActionCreators";
 
 const mapStateToProps = (state) => {
   return {

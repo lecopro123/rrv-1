@@ -3,7 +3,6 @@ import NavBar from "./components/navbar/navbar";
 import logo from "../assets/logo.png";
 import chevronUp from "../assets/up-chevron.svg";
 import { useEffect, useRef, useState } from "react";
-import { Markup } from 'interweave';
 
 function App(props) {
   /*const [loading, setLoading] = useState(true);
@@ -11,24 +10,43 @@ function App(props) {
   //let k = props.data.news.data;
   //console.log(props.data.news[0].data)
   const [num, setnum] = useState(1);
-  const [his, sethis] = useState([])
   const topRef = useRef(null);
 
   //console.log(props.data.isLoading)
   /*const arr=props.data.news.data;
   let newarr=update(arr,pu)*/
+
+  /*useEffect(() => {
+    console.log(props.data)
+    props.page()
+    if (!props.data.isLoading) sethis(his.concat(props.data.news.data))
+  }, [])*/
+
   const trigger = () => {
     if (num < props.data.news.page_total) {
-      setnum(curr => curr + 1)
+      setnum(num => num + 1)
     }
+
     //console.log(num)
   }
 
   useEffect(() => {
     console.log(num)
     props.page(num)
-    //console.log(l);
+    //if (!props.data.isLoading) sethis(his.concat(props.data.news.data))
   }, [num])
+
+  /*useEffect(() => {
+    (async () => {
+      const products = await api.index()
+      setFilteredProducts(products)
+      setProducts(products)
+    })()
+  }, [])*/
+
+  /*useEffect(() => {
+    console.log(his)
+  }, [his])*/
 
   /*useEffect(() => {
     (async () => {
@@ -83,7 +101,7 @@ function App(props) {
         {props.data.isLoading ? (
           <div className="loader"></div>
         ) : (
-          props.data.news.data.map((article) => {
+          props.s.map(article => {
             return (
               <div className="article" key={article.id}>
                 <div className="article-likes">👑 {article.art_status}</div>
@@ -107,7 +125,7 @@ function App(props) {
           })
         )}
       </div>
-      {!props.data.isLoading && props.data.news.data.length > 0 && (
+      {!props.data.isLoading && props.data.news.data.length > 0 && num < 3 && (
         <div className="btn-container" onClick={trigger}>
           <div className="more-btn">View More</div>
         </div>

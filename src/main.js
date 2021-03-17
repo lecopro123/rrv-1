@@ -7,6 +7,7 @@ import App from './app/App'
 const mapStateToProps = state => {
   return {
     news: state.news,
+    collections: state.news.coll
   }
 }
 
@@ -25,7 +26,7 @@ class Main extends Component {
     //let { data } = this.props.news.news;
 
     return (
-      <App data={this.props.news} page={this.props.fetchNews} />
+      <App data={this.props.news} page={this.props.fetchNews} s={this.props.collections} />
     )
   }
 }

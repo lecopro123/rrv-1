@@ -3,6 +3,10 @@ import NavBar from "./components/navbar/navbar";
 import logo from "../assets/logo.png";
 import chevronUp from "../assets/up-chevron.svg";
 import { useEffect, useRef, useState } from "react";
+<<<<<<< HEAD
+=======
+import { Markup } from "interweave";
+>>>>>>> 5241ac729e162713d45192397fd415696455459d
 
 function App(props) {
   /*const [loading, setLoading] = useState(true);
@@ -10,6 +14,10 @@ function App(props) {
   //let k = props.data.news.data;
   //console.log(props.data.news[0].data)
   const [num, setnum] = useState(1);
+<<<<<<< HEAD
+=======
+  const [his, sethis] = useState([]);
+>>>>>>> 5241ac729e162713d45192397fd415696455459d
   const topRef = useRef(null);
 
   //console.log(props.data.isLoading)
@@ -24,17 +32,28 @@ function App(props) {
 
   const trigger = () => {
     if (num < props.data.news.page_total) {
+<<<<<<< HEAD
       setnum(num => num + 1)
+=======
+      setnum((curr) => curr + 1);
+>>>>>>> 5241ac729e162713d45192397fd415696455459d
     }
 
     //console.log(num)
-  }
+  };
 
   useEffect(() => {
+<<<<<<< HEAD
     console.log(num)
     props.page(num)
     //if (!props.data.isLoading) sethis(his.concat(props.data.news.data))
   }, [num])
+=======
+    console.log(num);
+    props.page(num);
+    //console.log(l);
+  }, [num]);
+>>>>>>> 5241ac729e162713d45192397fd415696455459d
 
   /*useEffect(() => {
     (async () => {
@@ -104,18 +123,29 @@ function App(props) {
           props.s.map(article => {
             return (
               <div className="article" key={article.id}>
-                <div className="article-likes">👑 {article.art_status}</div>
-                <img
-                  className="article-cover"
-                  src={"https://www.readingright.in/" + article.art_image}
-                  alt={article.id}
-                />
-                <div className="article-covertext">{article.art_head}</div>
+                <div className="cover-container">
+                  <img
+                    className="article-cover"
+                    src={"https://www.readingright.in/" + article.art_image}
+                    alt={article.id}
+                  />
+                  <div className="article-likes">👑 {article.art_status}</div>
+                  <div className="article-covertext">{article.art_head}</div>
+                </div>
                 <div className="article-meta">
-                  <div className="article-source">📰 The Caravan | {Math.round((new Date() - new Date(article.art_pub_dt)) / (1000 * 60 * 60 * 24 * 7))} Weeks</div>
+                  <div className="article-source">
+                    📰 The Caravan |{" "}
+                    {Math.round(
+                      (new Date() - new Date(article.art_pub_dt)) /
+                        (1000 * 60 * 60 * 24 * 7)
+                    )}{" "}
+                    Weeks
+                  </div>
                   <div className="article-reduced">
                     <div>
-                      {article.art_data.replace(/(<([^>]+)>)/gi, "").replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
+                      {article.art_data
+                        .replace(/(<([^>]+)>)/gi, "")
+                        .replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
                     </div>
                   </div>
                   <div className="article-tag">Science & Technology</div>

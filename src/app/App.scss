@@ -94,20 +94,25 @@
       &:first-child {
         margin-top: 1.5rem;
       }
-      &-source{
-        padding-top:10px;
+      &-source {
+        padding-top: 10px;
         text-align: center;
       }
 
+      .cover-container {
+        position: relative;
+      }
+
       &-cover {
+        position: relative;
         box-shadow: 0px 6px 30px rgba(#000000, 0.4);
-        //max-width: 800px;
-        width: 1225px;
+        width: 90vw;
+        max-width: 1225px;
         height: 482px;
         object-fit: cover;
         // border-radius: 2px 2px 0 0;
       }
-     /* &-covertext{
+      /* &-covertext{
         height: 120px;
         width: 350px;
         font-size:28px;
@@ -117,44 +122,55 @@
           background-color:whitesmoke;
           opacity: 0.5;
       }*/
- &-covertext{
-        height: 120px;
-        width: 700px;
-        font-size:28px;
+      &-covertext {
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+        overflow: hidden;
+        display: flex;
+        width: auto;
+        // height: 120px;
+        // width: 700px;
+
+        max-width: 700px;
+        font-size: 28px;
         position: absolute;
-        top: 340px;
-        left: 50px;
-        background-color:rgba(245,245, 245, 0.4);
-        padding: 20px 20px 20px 50px;
-        border-radius:7px;
+        bottom: 1.5rem;
+        left: 1.5rem;
+
+        right: 1.5rem;
+        background-color: rgba(245, 245, 245, 0.4);
+        padding: 20px;
+        padding-left: 30px;
+        border-radius: 7px;
         //align-items:left;
         //text-align:left;
       }
-      &-likes{
-        width:75px;
-        height:50px;
-        background-color:rgba(245,245, 245, 0.4);
+      &-likes {
         position: absolute;
-        top: 10px;
-        right: 10px;
-        border-radius:7px;
-        text-align:center;
+        width: 75px;
+        height: 50px;
+        background-color: rgba(245, 245, 245, 0.4);
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        border-radius: 7px;
+        text-align: center;
         padding: 13px 10px 10px 10px;
       }
-     &-reduced{
-       padding-top: 10px;
-       padding-bottom: 20px;
-        height:110px;
-        line-height:20px; 
-        overflow:hidden;
+      &-reduced {
+        padding-top: 10px;
+        padding-bottom: 20px;
+        height: 110px;
+        line-height: 20px;
+        overflow: hidden;
         text-align: center;
         text-overflow: ellipsis !important;
-    }
-    &-tag{
-      padding-top: 20px;
-      text-align:center;
-      padding-bottom: 30px;
-    }
+      }
+      &-tag {
+        padding-top: 20px;
+        text-align: center;
+        padding-bottom: 30px;
+      }
       &-meta {
         padding: 6px;
         // background-color: #ffffff;
@@ -169,12 +185,12 @@
         }
 
         div {
-          font-size: small;
+          font-size: medium;
           color: #0c0c0d;
         }
         br {
           display: none;
-      }
+        }
       }
     }
   }

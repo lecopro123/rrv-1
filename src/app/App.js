@@ -3,7 +3,7 @@ import NavBar from "./components/navbar/navbar";
 import logo from "../assets/logo.png";
 import chevronUp from "../assets/up-chevron.svg";
 import { useEffect, useRef, useState } from "react";
-import { Markup } from 'interweave';
+import { Markup } from "interweave";
 
 function App(props) {
   /*const [loading, setLoading] = useState(true);
@@ -11,7 +11,7 @@ function App(props) {
   //let k = props.data.news.data;
   //console.log(props.data.news[0].data)
   const [num, setnum] = useState(1);
-  const [his, sethis] = useState([])
+  const [his, sethis] = useState([]);
   const topRef = useRef(null);
 
   //console.log(props.data.isLoading)
@@ -19,16 +19,16 @@ function App(props) {
   let newarr=update(arr,pu)*/
   const trigger = () => {
     if (num < props.data.news.page_total) {
-      setnum(curr => curr + 1)
+      setnum((curr) => curr + 1);
     }
     //console.log(num)
-  }
+  };
 
   useEffect(() => {
-    console.log(num)
-    props.page(num)
+    console.log(num);
+    props.page(num);
     //console.log(l);
-  }, [num])
+  }, [num]);
 
   /*useEffect(() => {
     (async () => {
@@ -86,18 +86,29 @@ function App(props) {
           props.data.news.data.map((article) => {
             return (
               <div className="article" key={article.id}>
-                <div className="article-likes">👑 {article.art_status}</div>
-                <img
-                  className="article-cover"
-                  src={"https://www.readingright.in/" + article.art_image}
-                  alt={article.id}
-                />
-                <div className="article-covertext">{article.art_head}</div>
+                <div className="cover-container">
+                  <img
+                    className="article-cover"
+                    src={"https://www.readingright.in/" + article.art_image}
+                    alt={article.id}
+                  />
+                  <div className="article-likes">👑 {article.art_status}</div>
+                  <div className="article-covertext">{article.art_head}</div>
+                </div>
                 <div className="article-meta">
-                  <div className="article-source">📰 The Caravan | {Math.round((new Date() - new Date(article.art_pub_dt)) / (1000 * 60 * 60 * 24 * 7))} Weeks</div>
+                  <div className="article-source">
+                    📰 The Caravan |{" "}
+                    {Math.round(
+                      (new Date() - new Date(article.art_pub_dt)) /
+                        (1000 * 60 * 60 * 24 * 7)
+                    )}{" "}
+                    Weeks
+                  </div>
                   <div className="article-reduced">
                     <div>
-                      {article.art_data.replace(/(<([^>]+)>)/gi, "").replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
+                      {article.art_data
+                        .replace(/(<([^>]+)>)/gi, "")
+                        .replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
                     </div>
                   </div>
                   <div className="article-tag">Science & Technology</div>

@@ -24,17 +24,17 @@ function App(props) {
 
   const trigger = () => {
     if (num < props.data.news.page_total) {
-      setnum(num => num + 1)
+      setnum((num) => num + 1);
     }
 
     //console.log(num)
   };
 
   useEffect(() => {
-    console.log(num)
-    props.page(num)
+    console.log(num);
+    props.page(num);
     //if (!props.data.isLoading) sethis(his.concat(props.data.news.data))
-  }, [num])
+  }, [num]);
 
   /*useEffect(() => {
     (async () => {
@@ -98,43 +98,40 @@ function App(props) {
       <div ref={topRef} />
       <NavBar logo={logo} />
       <div className="App-main">
-        {props.data.isLoading ? (
-          <div className="loader"></div>
-        ) : (
-          props.s.map(article => {
-            return (
-              <div className="article" key={article.id}>
-                <div className="cover-container">
-                  <img
-                    className="article-cover"
-                    src={"https://www.readingright.in/" + article.art_image}
-                    alt={article.id}
-                  />
-                  <div className="article-likes">👑 {article.art_status}</div>
-                  <div className="article-covertext">{article.art_head}</div>
-                </div>
-                <div className="article-meta">
-                  <div className="article-source">
-                    📰 The Caravan |{" "}
-                    {Math.round(
-                      (new Date() - new Date(article.art_pub_dt)) /
-                      (1000 * 60 * 60 * 24 * 7)
-                    )}{" "}
-                    Weeks
-                  </div>
-                  <div className="article-reduced">
-                    <div>
-                      {article.art_data
-                        .replace(/(<([^>]+)>)/gi, "")
-                        .replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
-                    </div>
-                  </div>
-                  <div className="article-tag">Science & Technology</div>
-                </div>
+        {props.s.map((article) => {
+          return (
+            <div className="article" key={article.id}>
+              <div className="cover-container">
+                <img
+                  className="article-cover"
+                  src={"https://www.readingright.in/" + article.art_image}
+                  alt={article.id}
+                />
+                <div className="article-likes">👑 {article.art_status}</div>
+                <div className="article-covertext">{article.art_head}</div>
               </div>
-            );
-          })
-        )}
+              <div className="article-meta">
+                <div className="article-source">
+                  📰 The Caravan |{" "}
+                  {Math.round(
+                    (new Date() - new Date(article.art_pub_dt)) /
+                      (1000 * 60 * 60 * 24 * 7)
+                  )}{" "}
+                  Weeks
+                </div>
+                <div className="article-reduced">
+                  <div>
+                    {article.art_data
+                      .replace(/(<([^>]+)>)/gi, "")
+                      .replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
+                  </div>
+                </div>
+                <div className="article-tag">Science & Technology</div>
+              </div>
+            </div>
+          );
+        })}
+        {props.data.isLoading && <div className="loader"></div>}
       </div>
       {!props.data.isLoading && props.data.news.data.length > 0 && num < 3 && (
         <div className="btn-container" onClick={trigger}>

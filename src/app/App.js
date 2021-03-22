@@ -1,102 +1,25 @@
 import "./App.scss";
-import NavBar from "./components/navbar/navbar";
-import logo from "../assets/logo.png";
 import chevronUp from "../assets/up-chevron.svg";
 import { useEffect, useRef, useState } from "react";
 
 function App(props) {
-  /*const [loading, setLoading] = useState(true);
-  const [articles, setArticles] = useState([]);*/
-  //let k = props.data.news.data;
-  //console.log(props.data.news[0].data)
   const [num, setnum] = useState(1);
   const topRef = useRef(null);
-
-  //console.log(props.data.isLoading)
-  /*const arr=props.data.news.data;
-  let newarr=update(arr,pu)*/
-
-  /*useEffect(() => {
-    console.log(props.data)
-    props.page()
-    if (!props.data.isLoading) sethis(his.concat(props.data.news.data))
-  }, [])*/
 
   const trigger = () => {
     if (num < props.data.news.page_total) {
       setnum(num => num + 1)
     }
-
-    //console.log(num)
   };
 
   useEffect(() => {
-    console.log(num)
+    console.log(props.k)
     props.page(num)
-    //if (!props.data.isLoading) sethis(his.concat(props.data.news.data))
   }, [num])
-
-  /*useEffect(() => {
-    (async () => {
-      const products = await api.index()
-      setFilteredProducts(products)
-      setProducts(products)
-    })()
-  }, [])*/
-
-  /*useEffect(() => {
-    console.log(his)
-  }, [his])*/
-
-  /*useEffect(() => {
-    (async () => {
-      const products = await props.page(num)
-      sethis([...his, products])
-      console.log("hello")
-    })()
-  }, [])*/
-
-  /*useEffect(() => {
-    let mounted = true;
-    props.page(num)
-      .then(items => {
-        if (mounted) {
-          sethis(items)
-        }
-      })
-    return () => mounted = false;
-  }, [])*/
-
-  /*useEffect(() => {
-    //console.log(num)
-    k !== undefined ? sethis(his => [...his, k]) : sethis()
-    console.log(his)
-  },)*/
-  /*const getData = () => {
-    const requestURL = `https://www.readingright.in/apiservice/article/read/?format=json&user_id=57`;
-    const driveRequest = new Request(requestURL, {
-      method: "GET",
-    });
-
-    return fetch(driveRequest).then((response) => {
-      if (response.status === 200) {
-        return response.json();
-      }
-      throw response.status;
-    });
-  };
-
-  useEffect(() => {
-    getData().then((json) => {
-      setArticles(json.data);
-      setLoading(false);
-    });
-  }, []);*/
 
   return (
     <div className="App">
       <div ref={topRef} />
-      <NavBar logo={logo} />
       <div className="App-main">
         {props.data.isLoading ? (
           <div className="loader"></div>

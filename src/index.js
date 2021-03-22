@@ -5,12 +5,15 @@ import "./index.css";
 import Main from "./main";
 //import { BrowserRouter } from 'react-router-dom';
 import { ConfigStore } from "./Redux/ConfigureStore";
+import { BrowserRouter } from 'react-router-dom';
 
 const store = ConfigStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Main />
+    <BrowserRouter>
+      <Main />
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );

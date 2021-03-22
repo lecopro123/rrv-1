@@ -1,30 +1,60 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import App from "./app/App";
-import { fetchNews } from "./Redux/ActionCreators";
+import AppCat from "./app/catapp";
+import { fetchNews, fetchCat, fetchCatnews } from "./Redux/ActionCreators";
+import NavBar from "./app/components/navbar/navbar";
+import logo from "./assets/logo.png";
+import './app/App.scss';
+import { Switch, Redirect, Route, withRouter } from 'react-router-dom';
+//import { IndexRoute } from 'react-router';
 
 const mapStateToProps = (state) => {
   return {
     news: state.news,
-    collections: state.news.coll
+    collections: state.news.coll,
+    categories: state.categories,
+    catnews: state.catnews,
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
   fetchNews: (num) => dispatch(fetchNews(num)),
+  fetchCat: () => dispatch(fetchCat()),
+  fetchCatnews: (num) => dispatch(fetchCatnews(num))
 });
 
 class Main extends Component {
-  /*componentDidMount() {
-    this.props.fetchNews();
-  }*/
+  componentDidMount() {
+    //console.log(this.props.location.state.det)
+    this.props.fetchCat();
+    //if (this.props.location.state !== undefined) { this.props.fetchCatnews(this.props.location.state.det); }
+  }
   render() {
     //let { data } = this.props.news.news;
-
     return (
-      <App data={this.props.news} page={this.props.fetchNews} s={this.props.collections} />
+      <>
+        <NavBar logo={logo} cat={this.props.categories} />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <>
+                <App data={this.props.news} page={this.props.fetchNews} s={this.props.collections} />
+              </>
+            )}
+          />
+          <Route exact path="/category/:cat/:catid" render={() => (
+            <>
+              <AppCat data={this.props.catnews} pages={this.props.fetchCatnews} />
+            </>
+          )} />
+          <Redirect to="/" />
+        </Switch>
+      </>
     )
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

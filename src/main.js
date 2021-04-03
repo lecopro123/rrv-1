@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import App from "./app/App";
 import AppCat from "./app/catapp";
+import Login from "./app/login";
 import { fetchNews, fetchCat, fetchCatnews } from "./Redux/ActionCreators";
 import NavBar from "./app/components/navbar/navbar";
 import logo from "./assets/logo.png";
@@ -34,7 +35,7 @@ class Main extends Component {
     //let { data } = this.props.news.news;
     return (
       <>
-        <NavBar logo={logo} cat={this.props.categories} />
+        {<NavBar logo={logo} cat={this.props.categories} />}
         <Switch>
           <Route
             exact
@@ -50,6 +51,15 @@ class Main extends Component {
               <AppCat data={this.props.catnews} pages={this.props.fetchCatnews} />
             </>
           )} />
+          <Route
+            exact
+            path="/login"
+            render={() => (
+              <>
+                <Login />
+              </>
+            )}
+          />
           <Redirect to="/" />
         </Switch>
       </>

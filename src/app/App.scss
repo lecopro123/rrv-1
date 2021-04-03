@@ -150,7 +150,7 @@
         width: 75px;
         height: 50px;
         background-color: rgba(245, 245, 245, 0.4);
-        position: absolute;
+        //position: absolute;
         top: 1.5rem;
         right: 1.5rem;
         border-radius: 7px;
@@ -208,6 +208,7 @@
   }
 }
 
+
 .btn-container {
   width: 100%;
   // background-color: gray;
@@ -215,6 +216,13 @@
   justify-content: center;
   background-color: #fff;
   padding-bottom: 1.5rem;
+}
+
+.btn-container1 {
+  width: 100%;
+  // background-color: gray;
+  display: flex;
+  justify-content: center;
 }
 
 .more-btn {
@@ -262,4 +270,110 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.mp{
+//height: 750px;
+ background-color:#F5F5F5;
+}
+.ELD{
+  position: absolute;
+  //left: 0px;
+  left: -130px;
+  top: -130px;
+  z-index: -1;
+}
+/*.BELD{
+  position: absolute;
+  //left: 0px;
+  //overflow: hidden;
+  left: 1460px;
+  top: -260px;
+  z-index:1;
+}*/
+.some{
+  //padding-top: 50%;
+  display: grid;
+  justify-content: right;
+  //align-items: center;
+  padding-top: 105px;
+}
+.some1{
+  //padding-top: 50%;
+  display: grid;
+  justify-content: left;
+  //align-items: center;
+  padding-top: 105px;
+}
+
+.parent {
+  background-color: white;
+  width: 520px;
+  height: 500px;
+ 
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.parent1 {
+  background-color: #F5F5F5;
+  width: 520px;
+  height: 500px;
+ 
+  //display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.child {
+  padding: 10px;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #D3D3D3;
+}
+
+.right {
+  right: 0;
+  background-color:#DCDCDC;
+}
+.styled{
+  width: 400px;
+  height:35px;
+  border-radius:10px;
+  border-color: #D3D3D3;
+  padding: 20px 20px 20px 20px;
+  outline: none;
+}
+.in {
+  display:flex;
+  justify-content: center;
+}
+.padd{
+  padding-top: 23px;
+}
+.Wr{
+  width:300px;
+  height:60px;
+  text-align:center;
+}
+.Wr p{
+  font-size:25px;
+  font-weight: 400;
+}
+.dis{
+  display:flex;
+  justify-content: center;
+}
+.Data{
+  padding-top:150px;
 }

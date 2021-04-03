@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="238" height="73" viewBox="0 0 238 73">
+  <defs>
+    <filter id="Rectangle_4" x="0" y="0" width="238" height="73" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_11" data-name="Group 11" transform="translate(-847 -2681)">
+    <g transform="matrix(1, 0, 0, 1, 847, 2681)" filter="url(#Rectangle_4)">
+      <rect id="Rectangle_4-2" data-name="Rectangle 4" width="220" height="55" rx="27.5" transform="translate(9 6)" fill="#d97e79"/>
+    </g>
+    <g id="Group_10" data-name="Group 10" transform="translate(931 2702.5)">
+      <text id="Get_OTP" data-name="Get OTP" transform="translate(0 19)" fill="#fff" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Get OTP</tspan></text>
+    </g>
+  </g>
+</svg>

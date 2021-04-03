@@ -2,6 +2,9 @@ import "./App.scss";
 import chevronUp from "../assets/up-chevron.svg";
 import { useEffect, useRef, useState } from "react";
 import { Route, withRouter } from "react-router-dom";
+import Coin from '../assets/coin.svg';
+import tag from '../assets/tag.svg';
+import paper from '../assets/paper.svg';
 
 function AppCat(props) {
     const [num, setnum] = useState(1);
@@ -14,7 +17,7 @@ function AppCat(props) {
     };
 
     useEffect(() => {
-        console.log("hi")
+        //console.log("hi")
         if (props.location.state !== undefined) { props.pages(props.location.state.det) }
     }, [props.location.state.det])
 
@@ -34,12 +37,12 @@ function AppCat(props) {
                                         src={"https://www.readingright.in/" + article.art_image}
                                         alt={article.id}
                                     />
-                                    <div className="article-likes">👑 {article.art_status}</div>
+                                    <div className="article-likes"><img src={Coin} alt="C" /> {article.art_status}</div>
                                     <div className="article-covertext">{article.art_head}</div>
                                 </div>
                                 <div className="article-meta">
                                     <div className="article-source">
-                                        📰 The Caravan |{" "}
+                                        <img src={paper} alt="p" /> The Caravan |{" "}
                                         {Math.round(
                                             (new Date() - new Date(article.art_pub_dt)) /
                                             (1000 * 60 * 60 * 24 * 7)
@@ -52,7 +55,7 @@ function AppCat(props) {
                                                 .replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
                                         </div>
                                     </div>
-                                    <div className="article-tag">Science & Technology</div>
+                                    <div className="article-tag"><img src={tag} alt="t" /> Science & Technology</div>
                                 </div>
                             </div>
                         );

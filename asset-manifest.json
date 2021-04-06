@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/rr-ui/static/css/main.e2c88a08.chunk.css",
+    "main.js": "/rr-ui/static/js/main.23039614.chunk.js",
+    "main.js.map": "/rr-ui/static/js/main.23039614.chunk.js.map",
+    "runtime-main.js": "/rr-ui/static/js/runtime-main.2e93a5a5.js",
+    "runtime-main.js.map": "/rr-ui/static/js/runtime-main.2e93a5a5.js.map",
+    "static/js/2.f2afe84f.chunk.js": "/rr-ui/static/js/2.f2afe84f.chunk.js",
+    "static/js/2.f2afe84f.chunk.js.map": "/rr-ui/static/js/2.f2afe84f.chunk.js.map",
+    "index.html": "/rr-ui/index.html",
+    "static/css/main.e2c88a08.chunk.css.map": "/rr-ui/static/css/main.e2c88a08.chunk.css.map",
+    "static/js/2.f2afe84f.chunk.js.LICENSE.txt": "/rr-ui/static/js/2.f2afe84f.chunk.js.LICENSE.txt",
+    "static/media/Ellipse.1d61dfb0.svg": "/rr-ui/static/media/Ellipse.1d61dfb0.svg",
+    "static/media/LLogo.6b2ee3dd.svg": "/rr-ui/static/media/LLogo.6b2ee3dd.svg",
+    "static/media/coin.401f63c6.svg": "/rr-ui/static/media/coin.401f63c6.svg",
+    "static/media/logo.229edc6a.png": "/rr-ui/static/media/logo.229edc6a.png",
+    "static/media/menu.64991de9.svg": "/rr-ui/static/media/menu.64991de9.svg",
+    "static/media/paper.e189ba8e.svg": "/rr-ui/static/media/paper.e189ba8e.svg",
+    "static/media/search.ac1d7510.svg": "/rr-ui/static/media/search.ac1d7510.svg",
+    "static/media/tag.9f346c5f.svg": "/rr-ui/static/media/tag.9f346c5f.svg",
+    "static/media/up-chevron.232a090e.svg": "/rr-ui/static/media/up-chevron.232a090e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e93a5a5.js",
+    "static/js/2.f2afe84f.chunk.js",
+    "static/css/main.e2c88a08.chunk.css",
+    "static/js/main.23039614.chunk.js"
+  ]
+}

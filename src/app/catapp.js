@@ -5,6 +5,7 @@ import { Route, withRouter } from "react-router-dom";
 import Coin from '../assets/coin.svg';
 import tag from '../assets/tag.svg';
 import paper from '../assets/paper.svg';
+import Fade from 'react-reveal/Fade';
 
 function AppCat(props) {
     const [num, setnum] = useState(1);
@@ -30,34 +31,37 @@ function AppCat(props) {
                 ) : (
                     props.data.catNews.data.map(article => {
                         return (
-                            <div className="article" key={article.id}>
-                                <div className="cover-container">
-                                    <img
-                                        className="article-cover"
-                                        src={"https://www.readingright.in/" + article.art_image}
-                                        alt={article.id}
-                                    />
-                                    <div className="article-likes"><img src={Coin} alt="C" /> {article.art_status}</div>
-                                    <div className="article-covertext">{article.art_head}</div>
-                                </div>
-                                <div className="article-meta">
-                                    <div className="article-source">
-                                        <img src={paper} alt="p" /> The Caravan |{" "}
-                                        {Math.round(
-                                            (new Date() - new Date(article.art_pub_dt)) /
-                                            (1000 * 60 * 60 * 24 * 7)
-                                        )}{" "} Weeks
+                            <Fade left>
+                                <div className="article" key={article.id}>
+                                    <div className="cover-container">
+                                        <img
+                                            loading="lazy"
+                                            className="article-cover"
+                                            src={"https://www.readingright.in/" + article.art_image}
+                                            alt={article.id}
+                                        />
+                                        <div className="article-likes"><img src={Coin} alt="C" /> {article.art_status}</div>
+                                        <div className="article-covertext">{article.art_head}</div>
                                     </div>
-                                    <div className="article-reduced">
-                                        <div>
-                                            {article.art_data
-                                                .replace(/(<([^>]+)>)/gi, "")
-                                                .replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
+                                    <div className="article-meta">
+                                        <div className="article-source">
+                                            <img src={paper} alt="p" /> {article.source.name} |{" "}
+                                            {Math.round(
+                                                (new Date() - new Date(article.art_pub_dt)) /
+                                                (1000 * 60 * 60 * 24 * 7)
+                                            )}{" "} Weeks
+                                    </div>
+                                        <div className="article-reduced">
+                                            <div>
+                                                {article.art_data
+                                                    .replace(/(<([^>]+)>)/gi, "")
+                                                    .replace(/&nbsp;|&rsquo;|❓|💡|🔗/gi, "")}
+                                            </div>
                                         </div>
+                                        {/*<div className="article-tag"><img src={tag} alt="t" /> {article.category} </div>*/}
                                     </div>
-                                    <div className="article-tag"><img src={tag} alt="t" /> Science & Technology</div>
                                 </div>
-                            </div>
+                            </Fade>
                         );
                     })
                 )}
